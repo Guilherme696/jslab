@@ -66,3 +66,27 @@ pedidos.forEach(p => {
     const { id, cliente, status } = p;
     console.log(`ID: ${id} - Cliente: ${cliente} - Status: ${status}`);
 });
+
+console.log("--- Itens 25 e 26: Buscas com find() ---");
+const pedidoEncontrado = pedidos.find(p => p.id === 1043);
+console.log("Pedido 1043 localizado:", pedidoEncontrado);
+
+const pedidoInexistente = pedidos.find(p => p.id === 9999);
+console.log("Busca por ID inexistente (9999):", pedidoInexistente); 
+
+
+console.log("--- Processamento Avançado: filter, map e sort ---");
+
+const pedidosAbertos = pedidos.filter(p => p.status === "aberto");
+console.log("Apenas Pedidos com status 'aberto':", pedidosAbertos);
+
+const clientesEValores = pedidos.map(p => {
+    return {
+        cliente: p.cliente,
+        valorFormatado: Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(p.valor)
+    };
+});
+console.log("Coleção transformada usando map e formatação Intl:", clientesEValores);
+
+const pedidosOrdenadosPorValor = [...pedidos].sort((a, b) => a.valor - b.valor);
+console.log("Pedidos ordenados por Valor Crescente (Spread Syntax utilizada):", pedidosOrdenadosPorValor);
