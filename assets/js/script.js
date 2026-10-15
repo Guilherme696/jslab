@@ -45,3 +45,15 @@ console.log(`Valor Final a Pagar: R$ ${compraValorFinal.toFixed(2)}`);
 console.log(`Tipo da constante 'produtoNome': ${typeof produtoNome}`);
 console.log(`Tipo da constante 'produtoPreco': ${typeof produtoPreco}`);
 console.log(`Tipo da constante 'produtoDisponivel': ${typeof produtoDisponivel}`);
+
+console.log("--- TESTE DE CONDICIONAIS ---");
+const notaFinal = 85;
+
+if (notaFinal >= 90) {
+    console.log("Aprovado com conceito A!");
+} else if (notaFinal >= 60) {
+    console.log("Aprovado!"); 
+} else {
+    console.log("Reprovado.");
+}
+
